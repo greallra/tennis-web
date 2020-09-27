@@ -30,7 +30,7 @@ app.use((req, res, next)=>{
     if(req.url === '/profiles') {
         //serving react assets
         //path is to build folder, create react app adds /static in the links
-        console.log("yes prfiles");
+        console.log("yes prfiles - profilesPublicAssets", profilesPublicAssets);
         app.use(express.static(profilesPublicAssets));
     }else {
         app.use(express.static(__dirname + '/public'));
