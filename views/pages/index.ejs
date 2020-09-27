@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body class="container">
+
+<header>
+    <%- include('../partials/nav'); %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <% if (arts) {
+            arts.forEach((art, i)=>{  %>
+                <%- include('../partials/article', {art: art, i: i}); %>
+        <%  })
+            } %>
+    </div>
+</main>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+<%- include('../partials/scripts.ejs'); %>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<% if(i === 0){  %>
+    <article class="art-row-headline">
+        <div class="art-col-headline">
+           
+            <img src="<%= art.img %>" alt="">
+        </div>
+        <div class="art-col-headline">
+            <p class="timestamp"><%= art.pub %></p>
+            <p class="title"><%= art.tit %></p>
+            <p class="author"><%= art.aut %></p>  
+        </div>
+    
+    </article>
+<% } %>
+
+<article class="art-row">
+    <div class="art-col">
+       
+        <img src="<%= art.img %>" alt="">
+    </div>
+    <div class="art-col">
+        <p class="timestamp"><%= art.pub %></p>
+        <p class="title"><%= art.tit %></p>
+        <p class="author"><%= art.aut %></p>  
+    </div>
+
+</article>

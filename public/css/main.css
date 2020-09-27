@@ -1,0 +1,84 @@
+ body {
+     margin: 0;
+     font-family: "MuseoModerno",cursive;
+    
+ }
+ main {
+     max-width: 1000px;
+     margin: 60px auto;
+     padding: 20px;
+ }
+ a {
+     color: none;
+     text-decoration: none;
+     color: #ffff;
+ }
+
+ .art-row, .art-row-headline {
+     display: flex;
+     justify-content: space-evenly;
+ }
+ .art-col, .art-col-headline {
+     padding: 10px;
+     width: 50%;
+     margin-bottom: 20px;
+     border-bottom: 1px solid #ededed;
+ }
+ .art-row p, .art-col-headline-p {
+     margin: 0 0 10px 0;
+ }
+ .art-col img, .art-col-headline img {
+     width: 100%;
+ }
+ .timestamp {
+     color: red;
+ }
+ .title {
+     font-size: 17px;
+     font-weight: 900;
+ }
+ .author {
+     font-size: 11px;
+ }
+
+ @media only screen and (min-width: 600px){
+    .art-row-headline {
+        
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #ededed;
+    }
+    .art-col-headline:nth-child(2) {
+      
+        display: grid;
+        grid-template-areas: 
+            'myArea myArea myArea myArea myArea myArea'
+            'timestamp timestamp timestamp timestamp timestamp author'
+            ;
+    }
+    .art-col-headline img {
+        width: 100%;
+    }
+    .art-col-headline .timestamp {
+        color: red;
+        order: 2;
+        grid-area: timestamp;
+    }
+    
+    .art-col-headline .title {
+        font-size: 27px;
+        font-weight: 900;
+        order: 1;
+        grid-area: myArea;
+    }
+    
+    .art-col-headline .author {
+        font-size: 11px;
+        order: 3;
+        grid-area: author;
+        text-align: end;
+    }
+    
+    
+    
+ }
