@@ -1,5 +1,4 @@
 var request = require('request');
-let xmlParser = require('xml2json');
 
 const getProfile = (id)=>{
     return new Promise((res, rej)=>{
