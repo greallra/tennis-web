@@ -4,7 +4,7 @@ const routes = require('./routes/routes');
 const apiRoutes = require('./routes/apiRoutes');
 const app = express();
 const path = require('path')
-const profilesPublicAssets = path.join(__dirname, 'profiles', 'build', 'static')
+const profilesPublicAssets = path.join(__dirname, 'profiles', 'build')
 
 //envirmonment
 require('dotenv').config()
@@ -28,6 +28,8 @@ app.use((req, res, next)=>{
     res.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, Authorization");
     //serve assets for frontend
     if(req.url === '/profiles') {
+        //serving react assets
+        //path is to build folder, create react app adds /static in the links
         console.log("yes prfiles");
         app.use(express.static(profilesPublicAssets));
     }else {
@@ -44,8 +46,7 @@ app.use(apiRoutes);
 
 //serve react app
 app.get('/profiles', (req,res, next)=>{
-    // res.sendFile(path.join(profilesPublicAssets, '..', 'index.html'))
-    res.send("hey")
+    res.sendFile(path.join(profilesPublicAssets, 'index.html'))
 })
 
 app.listen( PORT, ()=>{
