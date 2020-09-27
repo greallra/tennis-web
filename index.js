@@ -44,7 +44,8 @@ app.use(apiRoutes);
 
 //serve react app
 app.get('/profiles', (req,res, next)=>{
-    res.sendFile(path.join(profilesPublicAssets, '..', 'index.html'))
+    // res.sendFile(path.join(profilesPublicAssets, '..', 'index.html'))
+    res.send("hey")
 })
 
 app.listen( PORT, ()=>{
