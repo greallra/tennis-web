@@ -19,3 +19,6 @@ ul li a {
 .active-nav {
     color: green;
 }
+#logo {
+    width: 20px;
+}

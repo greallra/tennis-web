@@ -1,0 +1,1 @@
+<a href='<%= process.env.LOCAL_HOST %>/<%= art.id %>'>
