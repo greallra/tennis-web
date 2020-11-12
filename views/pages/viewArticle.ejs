@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+</head>
+<body>
+<script>
+    
+</script>
+<header>
+    <%- include('../partials/nav'); %>
+    <script src="https://kit.fontawesome.com/3a615f6595.js" crossorigin="anonymous"></script>
+</header>
+
+  
+<div class="container">
+    <div class="columns">
+        <div class="column is-three-quarters-tablet">
+            <div class="section">
+                <div class="va-top pb-1">     
+                    <button class="button is-primary"><a href='<%= process.env.LOCAL_HOST %>' class="back-link">Back to Articles...</a></button>
+                    <h3 class="has-text-weight-bold is-size-4 is-size-3-tablet pt-3"><%= art.tit %></h3>
+                    <div class="colums">
+                        <div class="column">
+                            <div class="thumb"><img src='https://randomuser.me/portraits/men/<%=Math.round(Math.random() * 50)%>.jpg' alt="" ></div>
+                        </div>
+                        <div class="column" style="line-height: 17px;">
+                            <div class="author"><span class="has-text-weight-bold is-size-6">By</span> <span class="has-text-danger"><%= art.aut %></span></div>
+                            <div class="has-text-grey-light timestamp is-size-6"><%= art.pub %></div>
+                        </div>   
+                    </div>
+                    <div class="social-cont mb-2">
+                        <span class="has-text-grey-light is-size-5">Share: </span> 
+                        <div class="icon-cont" style="background-color:#1DA1F2; color: white;" ><i class="fab fa-twitter"></i></div>
+                        <div class="icon-cont" style="background-color:#32529F; "><i class="fab fa-instagram" style="color: white;"></i></div>
+                        <div class="icon-cont" style="background-color:#1DA1F2;"><i class="fab fa-facebook" style="color: white;"></i></div>
+                        <div class="icon-cont" style="background-color:#25D366;"><i class="fab fa-whatsapp" style="color: white;"></i></div> 
+                    </div>
+                </div>
+                <div class="va-article">
+                    <div class="big-img"><img src='<%= art.img %>' alt="" class="va-img"></div>
+                    <h4 class="has-text-weight-bold pt-3 is-size-5 is-size-4-tablet"><%= art.tit %></h4>
+                    <div id="test"></div>
+                    <p class="va-p pt-3 pb-3 is-size-5" style="display: none;"><%= art.con %></p>
+                </div>       
+            </div>
+        </div>
+        <div class="column is-one-quarter-tablet" id="va-la-section">
+            <div class="latest-articles-cont"> 
+                <h2 class="is-size-4 pt-3 pb-3">Latest Articles</h2>     
+                <% if (arts) {
+                    arts.forEach((art, i)=>{  %>
+                        <% if(i === 0) { } else {%>
+                        <div class="la-img-cont"><img src='<%= art.img %>' alt=""></div>
+                        <div class="la-title-cont pt-1 pb-1"><h5 class="has-text-weight-semibold"><%= art.tit %></h5></div>
+                        <% }%>
+                <%  })
+                    } %>
+                
+            </div>
+        </div>
+     
+      </div>
+
+    
+
+</div>
+
+<footer>
+    <%- include('../partials/footer'); %>
+</footer>
+
+<%- include('../partials/scripts.ejs'); %>
+
+</body>
+</html>

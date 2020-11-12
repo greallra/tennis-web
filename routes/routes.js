@@ -6,7 +6,7 @@ router.get('/', async (req,res)=>{
     console.log("test");
     try {
         const articles = await getArticles();
-        // console.log(articles);
+        console.log(articles);
         res.render('pages/index', {
             timestamp: "fdsa",
             arts: articles.arts
@@ -22,13 +22,16 @@ router.get('/results', async (req,res)=>{
      console.log("err", error);   
     }
 })
+router.get('/test', async (req,res)=>{
+    res.render('pages/test');  
+})
 
 router.get('/article/:articleId', async (req, res)=>{
     try {
         const articles = await getArticles();
         const getArticle = articles.arts.find((art)=> art.id == req.params.articleId)
         //console.log(getArticle);
-        res.render('pages/article', {
+        res.render('pages/viewArticle', {
              art: getArticle,
             arts: articles.arts
         });  

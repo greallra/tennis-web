@@ -1,0 +1,14 @@
+<% if(i > 10){ %>
+    <div class="column">
+        <article class="oa-m">
+            <a href='<%= process.env.LOCAL_HOST %>/article/<%= art.id %>' class="oa-d-link">
+            <div class="art-col">
+                <img class="oa-m-img" src="<%= art.img %>" alt="">
+            </div>
+            <p class="oa-m-timestamp timestamp"><%= art.pub %></p>
+            <p class="oa-m-title is-size-5 has-text-dark has-text-weight-semibold"><%= art.tit %></p>
+            <p class="oa-m-author"><%= art.aut %></p>  
+            </a>
+        </article>
+    </div>
+<% } %>

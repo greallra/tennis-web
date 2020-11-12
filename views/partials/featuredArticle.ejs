@@ -1,0 +1,23 @@
+<div class="section has-text-centered"> 
+    <article class="fa">
+        <a href='<%= process.env.LOCAL_HOST %>/article/<%= art.id %>' class="fa-link">
+            <img src="<%= art.img %>" alt="">
+            <p class="fa-timestamp timestamp"><%= art.pub %></p>
+            <h2 class="fa-title"><%= art.tit %></h2>
+            <p class="fa-author"><%= art.aut %></p>  
+        </a>
+    </article>
+</div>
+<!-- Old articles will appear on desktop -->
+<% if (arts) {  %>
+<div class="section" id="old-arts-mob"> 
+    <!-- tablet >  2 cols per row -->
+    <h3 class="is-size-3">Other Articles</h3>    
+    <div class="columns is-multiline">
+        <% arts.forEach((art, i)=>{  %>
+                <%- include('../partials/oldArticlesDesk', {art: art, i: i}); %>
+        <%  }) %>    
+    </div>
+</div> 
+   
+<% } %>    

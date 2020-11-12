@@ -3,21 +3,58 @@
 <head>
     <%- include('../partials/head'); %>
 </head>
-<body class="container">
+<style>
+   
+</style>
+<body>
 
 <header>
     <%- include('../partials/nav'); %>
 </header>
 
-<main>
-    <div class="articles-cont">
-        <% if (arts) {
-            arts.forEach((art, i)=>{  %>
-                <%- include('../partials/article', {art: art, i: i}); %>
-        <%  })
-            } %>
+<div class="container">
+    <!-- By default columns only acvtivated from tablet onwards -->
+    <!-- Columns by default only active on tablet up, will stack like rows on mob -->
+    <div class="columns">
+        <div class="column is-three-quarters-desktop">
+          <% if (arts) { %>
+                <%- include('../partials/featuredArticle', {art: arts[0], arts: arts}); %>
+          <% } %>
+        </div>
+        <div class="column is-one-quarter">
+            <!-- LATEST SECTION mob-->
+            <div class="section" id="latest-arts-mob">
+                <h3 class="is-size-3">Latest Articles</h3>       
+                <div class="columns is-mobile" style="overflow-x: scroll;">
+                    <% if (arts) {
+                        arts.forEach((art, i)=>{  %>
+                            <%- include('../partials/latestArticlesMob', {art: art, i: i}); %>
+                    <%  })
+                        } %>
+                </div>
+            </div> 
+            <!-- LATEST SECTION DESK-->
+            <div class="section" id="latest-arts-desk">
+                <h3 class="is-size-3">Latest Articles</h3>     
+                    <% if (arts) {
+                        arts.forEach((art, i)=>{  %>
+                            <%- include('../partials/latestArticlesDesk', {art: art, i: i}); %>
+                    <%  })
+                        } %>
+            </div> 
+            <!-- OLD SECTION( MAYBE LAST 10) -->
+            <div class="section" id="old-arts-mob"> 
+                <!-- tablet >  2 cols per row -->
+                <h3 class="is-size-3">Other Articles</h3>    
+                <div class="columns is-multiline">
+                    <% arts.forEach((art, i)=>{  %>
+                            <%- include('../partials/oldArticlesMob', {art: art, i: i}); %>
+                    <%  }) %>    
+                </div>
+            </div> 
+            
     </div>
-</main>
+</div>
 
 <footer>
     <%- include('../partials/footer'); %>
@@ -27,3 +64,5 @@
 
 </body>
 </html>
+
+

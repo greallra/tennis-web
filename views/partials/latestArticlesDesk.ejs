@@ -1,0 +1,20 @@
+<% if(i === 0){  %>
+    <div></div>
+<% } else{ %>
+    <div class="columns is-mobile is-centered">
+        <div class="column">
+            <article class="la-d">
+                <a href='<%= process.env.LOCAL_HOST %>/article/<%= art.id %>' class="la-d-link">
+                <div class="">
+                    <img src="<%= art.img %>" alt="">
+                </div>
+                <p class="la-d-timestamp timestamp"><%= art.pub %></p>
+                <p class="la-d-title has-text-dark is-size-6 has-text-weight-semibold"><%= art.tit %></p>
+                </a>
+            </article>
+        </div>
+    </div>
+<% } %>
+
+
+

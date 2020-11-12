@@ -36,12 +36,7 @@ const getProfile = (id)=>{
         request(options, callback);
     });    
 }
-// async function funk() {
-//     let test = await getProfile()
-//     console.log(test);
-// }
-// funk();
-//https://rapidapi.com/apidojo/api/livescore6?endpoint=apiendpoint_b10574d4-14b8-4455-9959-929d0f73eab0
+
 let getArticles = (id)=>{
     return new Promise((res, rej)=>{
         let url = "https://livescore6.p.rapidapi.com/news/list?category=tennis";
