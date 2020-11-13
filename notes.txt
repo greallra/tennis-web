@@ -3,3 +3,4 @@ https://hackernoon.com/tutorial-creating-and-managing-a-node-js-server-on-aws-pa
 
 notes:
 pm2: controls the server processes: docs: https://pm2.keymetrics.io/
+
